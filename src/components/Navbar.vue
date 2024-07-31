@@ -3,10 +3,10 @@
         <div class="container justify-between">
             <a href="/" class="btn btn-ghost text-xl">Coffee SHOP</a>
             <ul class="menu menu-vertical lg:menu-horizontal rounded-box">
-                <li><a href="/coffee">Coffee</a></li>
-                <li><a href="/tea">Tea</a></li>
-                <li><a href="/cocoa&milk">Cocoa & Milk</a></li>
-                <li><a href="/bakery">Bakery</a></li>
+                <li><a @click="goToCoffeePage">Coffee</a></li>
+                <li><a @click="goToTeaPage">Tea</a></li>
+                <li><a @click="goToCocoaPage">Cocoa & Milk</a></li>
+                <li><a @click="goToBakeryPage">Bakery</a></li>
             </ul>
             <button class="btn btn-ghost dropdown dropdown-end" @click="showCart">
                 <div class="indicator">
@@ -35,6 +35,18 @@ export default {
     methods: {
         showCart() {
             this.CartItem = !this.CartItem
+        },
+        goToCoffeePage() {
+            this.$router.push("/coffee");
+        },
+        goToTeaPage() {
+            this.$router.push("/tea");
+        },
+        goToCocoaPage() {
+            this.$router.push("/cocoa&milk");
+        },
+        goToBakeryPage() {
+            this.$router.push("/bakery");
         }
     }
 }
